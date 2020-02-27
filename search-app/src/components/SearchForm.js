@@ -9,7 +9,7 @@ class SearchForm extends Component {
 
   render() {
     return (
-      <form>
+      <form className="searchForm">
         
       </form>
     )

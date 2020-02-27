@@ -1,0 +1,16 @@
+// Resets
+* {
+  margin:       0;
+  padding:      0;
+  box-sizing:   border-box;
+  font-family:  sans-serif;
+}
+
+//Colors
+$white:             #FFFFFF;
+$lightgrey:         #DDDDDD;
+$transparentBlack:  #00000033;
+$black:             #000000;
+
+//Box shadows
+$searchFormShadow: 0 2px 5px $transparentBlack;
