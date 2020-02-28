@@ -82,10 +82,21 @@ html {
           columns: 4;
   -webkit-column-gap: 10px;
           column-gap: 10px;
+  -webkit-column-fill: auto;
+          column-fill: auto;
 }
 
 .imageCard {
   width: 100%;
   margin: 2.5px 0;
+}
+
+.imageCard.blurred {
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+}
+
+.imageCard.hidden {
+  opacity: .15;
 }
 /*# sourceMappingURL=main.css.map */

@@ -11,8 +11,8 @@ class ImageList extends Component {
   }
 
   getImages() {
-    return this.props.images.map(image => 
-      <ImageCard key={ image.id } src={ image.src.large } />  
+    return this.props.images.map((image, index) =>
+      <ImageCard key={ image.id } delay={ index * 30 } src={ image.src.large } />  
     )
   }
 

@@ -47,12 +47,18 @@
   width: 100%;
   columns: 4;
   column-gap: 10px;
+  column-fill: auto;
 }
 
 .imageCard {
   width: 100%;
   margin: 2.5px 0;
-  // img {
-  //   max-width: 100%;
-  // }
+
+  &.blurred {
+    filter: blur(2px);
+  }
+
+  &.hidden {
+    opacity: .15;
+  }
 }
