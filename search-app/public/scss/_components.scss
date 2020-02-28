@@ -43,24 +43,43 @@
 
 }
 
-.imageList {
-  width:        100%;
-  column-count: 4;
-  column-gap:   10px;
-  column-fill:  auto;
+.imageContainer {
 
-  @media screen and (max-width: $breakLarge) {
-    column-count: 3;
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
   }
-  @media screen and (max-width: $breakMedium) {
-    column-count: 2;
-  }
+  width:        100%;
+  // column-count: 4;
+  // column-gap:   10px;
+  // column-fill:  auto;
+  // margin-bottom: 250px;
+
+  // @media screen and (max-width: $breakLarge) {
+  //   column-count: 3;
+  // }
+  // @media screen and (max-width: $breakMedium) {
+  //   column-count: 2;
+  // }
   
 }
 
+.imageCardSizer,
 .imageCard {
-  width:  100%;
+  width:  25%;
+}
+
+.imageCard {
+  float: left;
   margin: 2.5px 0;
+
+  img {
+    // display: block;
+    max-width:  100%;
+  }
+
+  
 
   &.hidden {
     opacity: .025;

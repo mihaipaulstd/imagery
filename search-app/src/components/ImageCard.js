@@ -15,7 +15,7 @@ class ImageCard extends Component {
 
   }
 
-  componentWillMount() {
+  componentDidMount() {
     setTimeout(() => {
       this.show();
     }, this.props.opacityDelay)
@@ -36,15 +36,12 @@ class ImageCard extends Component {
 
   render() {
     return (
-        <img
-          className={`
-            imageCard 
-            ${this.state.hidden ? 'hidden' : ''} 
-            ${this.state.blurred ? 'blurred' : ''}
-          `}
-          src={ this.props.src }
-          ref={ this.imageRef } 
-        />
+        <div className={`imageCard ${this.state.hidden ? 'hidden' : ''} ${this.state.blurred ? 'blurred' : ''}`}>
+          <img
+            src={ this.props.src }
+            ref={ this.imageRef } 
+          />
+        </div>
     )
   }
 

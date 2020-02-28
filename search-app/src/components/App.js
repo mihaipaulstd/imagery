@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
+
 import SearchForm from './SearchForm';
 import ImageCard from './ImageCard';
 
 import pexels from '../api/pexels';
+import Masonry from 'masonry-layout';
+import imagesLoaded from 'imagesloaded';
 
 class App extends Component {
   constructor() {
@@ -16,7 +19,20 @@ class App extends Component {
       currentTerm: null
     };
     this.submitHandler = this.submitHandler.bind(this);
-    this.fetchMoreImages = this.fetchMoreImages.bind(this);
+    this.fetchImagesOnScroll = this.fetchImagesOnScroll.bind(this);
+  }
+
+  componentDidUpdate() {
+    const imageContainer = document.querySelector('.imageContainer');
+    
+    imagesLoaded(imageContainer, () =>
+      new Masonry(imageContainer, {
+        itemSelector: '.imageCard',
+        columnWidth: '.imageCardSizer',
+        percentPosition: true
+      }).layout()
+    );
+
   }
 
   submitHandler(term) {
@@ -35,7 +51,7 @@ class App extends Component {
       });
   }
   
-  fetchMoreImages() {
+  fetchImagesOnScroll() {
     pexels.get('/v1/search', {
       params: {
         query: this.state.currentTerm,
@@ -58,12 +74,14 @@ class App extends Component {
       <div className="app container">
         <SearchForm onSubmit={ this.submitHandler } />
         <InfiniteScroll
-          className="imageList"
-          dataLength={this.state.images.length}
-          next={this.fetchMoreImages}
-          hasMore={true}
-          loader={<div></div>}
-        > 
+          className="imageContainer"
+          dataLength={ this.state.images.length }
+          next={ this.fetchImagesOnScroll }
+          scrollThreshold={ 0.95 }
+          hasMore={ true }
+          loader={ <div /> }
+        >
+          <div className="imageCardSizer"></div>
           {this.state.images.map(image =>
             <ImageCard
               key={ image.id }
