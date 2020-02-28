@@ -1,8 +1,8 @@
-import axios from 'axios';
+import axios from 'axios/index'
 import keys from './keys'
 
 const instance = axios.create({
-  baseURL: 'https://api.pexels.com/v1/',
+  baseURL: 'https://api.pexels.com/',
   headers: {
     Authorization: keys.find(api => api.name == 'pexels').key
   }
