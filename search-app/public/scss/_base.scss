@@ -14,5 +14,9 @@ $transparentBlack:  #00000033;
 $black:             #000000;
 
 //Box shadows
-$searchFormShadow: 0 2px 5px $transparentBlack;
-$formInputShadow: 0 2px 0px $turquoise;
+$searchFormShadow:  0 2px 5px $transparentBlack;
+$formInputShadow:   0 2px 0px $turquoise;
+
+//Breaks
+$breakLarge:  1200px;
+$breakMedium: 768px;

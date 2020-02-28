@@ -4,7 +4,10 @@ class ImageCard extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { hidden: true };
+    this.state = {
+      hidden: true,
+      blurred: true
+    };
 
     this.imageRef = React.createRef();
 
@@ -15,26 +18,33 @@ class ImageCard extends Component {
   componentWillMount() {
     setTimeout(() => {
       this.show();
-    }, this.props.delay)
+    }, this.props.opacityDelay)
+
+    setTimeout(() => {
+      this.focus();
+    }, this.props.blurDelay)
   }
 
   show() {
     this.setState({ hidden: false })
   }
 
-  // componentDidMount() {
-  //   this.imageRef.current.addEventListener('load', e => {
-  //     e.target.value
-  //   })
-  // }
+  focus() {
+    this.setState({ blurred: false })
+  }
+
 
   render() {
     return (
-
-      <div >
-        <img className={`imageCard ${this.state.hidden ? 'hidden' : ''}`} src={ this.props.src } ref={ this.imageRef } />
-      </div>
-        
+        <img
+          className={`
+            imageCard 
+            ${this.state.hidden ? 'hidden' : ''} 
+            ${this.state.blurred ? 'blurred' : ''}
+          `}
+          src={ this.props.src }
+          ref={ this.imageRef } 
+        />
     )
   }
 

@@ -8,5 +8,13 @@ html {
   position:         relative;
   overflow:         visible;
   background-color: transparent;
+
+  @media screen and (max-width: $breakLarge) {
+    max-width: 80%;
+  }
+
+  @media screen and (max-width: $breakMedium) {
+    max-width: 90%;
+  }
 }
 

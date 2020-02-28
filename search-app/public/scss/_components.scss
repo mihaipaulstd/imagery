@@ -4,38 +4,38 @@
 }
 
 .searchForm {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  display:          flex;
+  flex-direction:   column;
+  justify-content:  center;
+  align-items:      center;
+  text-align:       center;
   background-color: $transparentBlack;
-  height: 160px;
-  width: 100%;
-  border-radius: 4px;
-  margin: 50px auto;
-  box-shadow: $searchFormShadow;
+  height:           160px;
+  width:            100%;
+  border-radius:    4px;
+  margin:           50px auto;
+  box-shadow:       $searchFormShadow;
 }
 
 .formTitle {
-  font-weight: 400;
-  margin: 8px 0;
-  color: $white;
+  font-weight:  400;
+  margin:       8px 0;
+  color:        $white;
 }
 
 .formInput {
-  position: relative;
-  width: calc(17.5% + 100px);
-  max-width: 90%;
-  margin: 8px auto;
-  padding: 5px 8px;
-  border-radius: 2px;
-  border: none;
-  outline: none;
-  font-size: 110%;
-  color: lighten($turquoise, 10);
+  position:         relative;
+  width:            calc(17.5% + 100px);
+  max-width:        90%;
+  margin:           8px auto;
+  padding:          5px 8px;
+  border-radius:    2px;
+  border:           none;
+  outline:          none;
+  font-size:        110%;
+  color:            lighten($turquoise, 10);
   background-color: $darkgrey;
-  transition: box-shadow 100ms ease-out;
+  transition:       box-shadow 100ms ease-out;
 
   &:focus {
     box-shadow: $formInputShadow;
@@ -44,21 +44,30 @@
 }
 
 .imageList {
-  width: 100%;
-  columns: 4;
-  column-gap: 10px;
-  column-fill: auto;
+  width:        100%;
+  column-count: 4;
+  column-gap:   10px;
+  column-fill:  auto;
+
+  @media screen and (max-width: $breakLarge) {
+    column-count: 3;
+  }
+  @media screen and (max-width: $breakMedium) {
+    column-count: 2;
+  }
+  
 }
 
 .imageCard {
-  width: 100%;
+  width:  100%;
   margin: 2.5px 0;
 
-  &.blurred {
-    filter: blur(2px);
+  &.hidden {
+    opacity: .025;
   }
 
-  &.hidden {
-    opacity: .15;
+  &.blurred {
+    filter: blur(1px);
   }
+  
 }

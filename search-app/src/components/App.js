@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 import SearchForm from './SearchForm';
-import ImageList from './ImageList'
+import ImageCard from './ImageCard';
 
 import pexels from '../api/pexels';
 
@@ -9,13 +10,13 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      per_page: 80,
+      per_page: 9,
       page: 1,
-      images: [], 
-      next_page: null, 
-      prev_page: null
+      images: [],
+      currentTerm: null
     };
     this.submitHandler = this.submitHandler.bind(this);
+    this.fetchMoreImages = this.fetchMoreImages.bind(this);
   }
 
   submitHandler(term) {
@@ -29,18 +30,49 @@ class App extends Component {
       .then(object => {
         this.setState({
           images: object.data.photos,
-          next_page: object.data.next_page,
-          prev_page: object.data.prev_page
+          currentTerm: term
         })
-        console.log(object)
+      });
+  }
+  
+  fetchMoreImages() {
+    pexels.get('/v1/search', {
+      params: {
+        query: this.state.currentTerm,
+        per_page: this.state.per_page,
+        page: this.state.page + 1
+      }
+    })
+      .then(object => {
+        console.log(this.state)
+        this.setState({
+          images: this.state.images.concat(object.data.photos),
+          page: this.state.page + 1
+        })
       });
   }
 
+  
   render() {
     return (
       <div className="app container">
         <SearchForm onSubmit={ this.submitHandler } />
-        <ImageList images={ this.state.images } />
+        <InfiniteScroll
+          className="imageList"
+          dataLength={this.state.images.length}
+          next={this.fetchMoreImages}
+          hasMore={true}
+          loader={<div></div>}
+        > 
+          {this.state.images.map(image =>
+            <ImageCard
+              key={ image.id }
+              opacityDelay={ 1500 }
+              blurDelay={ 2000 }
+              src={ image.src.large } 
+            />
+          )}
+        </InfiniteScroll>
       </div>
     )
   }
