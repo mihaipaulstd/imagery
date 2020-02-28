@@ -75,4 +75,16 @@ html {
   -webkit-box-shadow: 0 2px 0px #40E0D0;
           box-shadow: 0 2px 0px #40E0D0;
 }
+
+.imageList {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(12rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-gap: 1rem;
+}
+
+.photo {
+  width: 100%;
+}
 /*# sourceMappingURL=main.css.map */

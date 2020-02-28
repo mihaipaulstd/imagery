@@ -8,7 +8,7 @@ class FormTitle extends Component {
   render() {
     return (
       <h2 className="formTitle">
-        Search image
+        Search images
       </h2>
     )
   }

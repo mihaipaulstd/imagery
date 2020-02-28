@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
 
+import Photo from './Photo';
+
 class ImageList extends Component {
   constructor(props) {
     super(props);
-
+    
     this.getPhotos = this.getPhotos.bind(this);
+    
   }
 
   getPhotos() {
-    this.props.photos.map(photo => 
-      <Photo />  
+    return this.props.photos.map(photo => 
+      <Photo key={ photo.id } src={ photo.src.large } />  
     )
-}
+  }
 
   render() {
     return (
-      <h2 className="imageList">
-        { this.getPhotos }
-      </h2>
+      <div className="imageList">
+        { this.getPhotos() }
+      </div>
     )
   }
 
