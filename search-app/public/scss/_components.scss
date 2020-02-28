@@ -10,25 +10,25 @@
   align-items: center;
   text-align: center;
   background-color: $transparentBlack;
-  height: 10rem;
+  height: 160px;
   width: 100%;
   border-radius: 4px;
-  margin: 3rem auto;
+  margin: 50px auto;
   box-shadow: $searchFormShadow;
 }
 
 .formTitle {
   font-weight: 400;
-  margin: .5rem 0;
+  margin: 8px 0;
   color: $white;
 }
 
 .formInput {
   position: relative;
-  width: calc(17.5% + 7.5rem);
+  width: calc(17.5% + 100px);
   max-width: 90%;
-  margin: .5rem auto;
-  padding: .35rem .5rem;
+  margin: 8px auto;
+  padding: 5px 8px;
   border-radius: 2px;
   border: none;
   outline: none;
@@ -41,16 +41,18 @@
     box-shadow: $formInputShadow;
   }
 
-  
-  
 }
 
 .imageList {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  grid-gap: 1rem;
+  width: 100%;
+  columns: 4;
+  column-gap: 10px;
 }
 
 .imageCard {
   width: 100%;
+  margin: 2.5px 0;
+  // img {
+  //   max-width: 100%;
+  // }
 }
