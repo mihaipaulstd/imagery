@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 
-import Photo from './Photo';
+import ImageCard from './ImageCard';
 
 class ImageList extends Component {
   constructor(props) {
     super(props);
     
-    this.getPhotos = this.getPhotos.bind(this);
+    this.getImages = this.getImages.bind(this);
     
   }
 
-  getPhotos() {
-    return this.props.photos.map(photo => 
-      <Photo key={ photo.id } src={ photo.src.large } />  
+  getImages() {
+    return this.props.images.map(image => 
+      <ImageCard key={ image.id } src={ image.src.large } />  
     )
   }
 
   render() {
     return (
       <div className="imageList">
-        { this.getPhotos() }
+        { this.getImages() }
       </div>
     )
   }

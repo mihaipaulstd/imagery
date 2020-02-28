@@ -79,12 +79,12 @@ html {
 .imageList {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(12rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  -ms-grid-columns: (minmax(18rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   grid-gap: 1rem;
 }
 
-.photo {
+.imageCard {
   width: 100%;
 }
 /*# sourceMappingURL=main.css.map */

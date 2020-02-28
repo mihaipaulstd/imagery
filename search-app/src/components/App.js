@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       per_page: 80,
       page: 1,
-      photos: [], 
+      images: [], 
       next_page: null, 
       prev_page: null
     };
@@ -28,7 +28,7 @@ class App extends Component {
     })
       .then(object => {
         this.setState({
-          photos: object.data.photos,
+          images: object.data.photos,
           next_page: object.data.next_page,
           prev_page: object.data.prev_page
         })
@@ -40,7 +40,7 @@ class App extends Component {
     return (
       <div className="app container">
         <SearchForm onSubmit={ this.submitHandler } />
-        <ImageList photos={ this.state.photos } />
+        <ImageList images={ this.state.images } />
       </div>
     )
   }
