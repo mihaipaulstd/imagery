@@ -8,9 +8,11 @@
 
 //Colors
 $white:             #FFFFFF;
-$lightgrey:         #DDDDDD;
+$darkgrey:          #333333;
+$turquoise:         #40E0D0;
 $transparentBlack:  #00000033;
 $black:             #000000;
 
 //Box shadows
 $searchFormShadow: 0 2px 5px $transparentBlack;
+$formInputShadow: 0 2px 0px $turquoise;
