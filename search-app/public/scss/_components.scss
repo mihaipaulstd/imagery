@@ -5,7 +5,6 @@
   height: 100%;
   transition: filter 200ms ease-out;
 
-
   &.blurred {
     filter: blur(4px);
   }
@@ -22,7 +21,6 @@
   width:            100%;
   border-radius:    30px;
   margin:           0 auto 50px;
-  // box-shadow:       $searchFormShadow;
 
 }
 
@@ -36,10 +34,10 @@
 
 .formInput {
   position:         relative;
-  width:            calc(17.5% + 200px);
+  width:            calc(20% + 200px);
   max-width:        90%;
   margin:           8px auto;
-  padding:          5px 15px;
+  padding:          5px 10px;
   border:           none;
   outline:          none;
   font-size:        110%;
@@ -57,6 +55,8 @@
   &::placeholder {
     font-family: 'Josefin Sans', sans-serif;
   }
+
+  
 
 }
 

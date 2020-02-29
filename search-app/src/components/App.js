@@ -17,8 +17,8 @@ class App extends Component {
     this.state = {
       per_load: 20,
       loads: 0,
-      images: new Array(),
-      currentImage: new Object(),
+      images: [],
+      currentImage: {},
       currentTerm: null,
       showModal: false
     };
@@ -109,6 +109,7 @@ class App extends Component {
                   ? this.state.currentImage.src.original
                   : '' 
                 }
+                alt=""
               >
               </img>
           </ReactModal>

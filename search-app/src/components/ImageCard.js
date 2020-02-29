@@ -59,7 +59,8 @@ class ImageCard extends Component {
         <div className={`imageCard ${this.state.hidden ? 'hidden' : ''} ${this.state.blurred ? 'blurred' : ''}`}>
           <img
             src={ this.props.src }
-            ref={ this.imageRef } 
+            ref={ this.imageRef }
+            alt=""
           />
         </div>
     )
