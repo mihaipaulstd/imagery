@@ -11,11 +11,23 @@ html {
 }
 
 .container {
-  max-width: 80%;
+  max-width: 70%;
   margin: 0 auto;
   position: relative;
   overflow: visible;
   background-color: transparent;
+}
+
+@media screen and (max-width: 2400px) {
+  .container {
+    max-width: 75%;
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  .container {
+    max-width: 80%;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -103,7 +115,21 @@ html {
 
 .imageCardSizer,
 .imageCard {
-  width: 25%;
+  width: 16.66%;
+}
+
+@media screen and (max-width: 2400px) {
+  .imageCardSizer,
+  .imageCard {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  .imageCardSizer,
+  .imageCard {
+    width: 25%;
+  }
 }
 
 @media screen and (max-width: 1200px) {

@@ -3,18 +3,26 @@ html {
 }
 
 .container{
-  max-width:        80%;
+  max-width:        $containerWidth;
   margin:           0 auto;
   position:         relative;
   overflow:         visible;
   background-color: transparent;
 
-  @media screen and (max-width: $breakLarge) {
-    max-width: 85%;
+  @media screen and (max-width: $breakXXL) {
+    max-width: $containerWidthXXL;
   }
 
-  @media screen and (max-width: $breakMedium) {
-    max-width: 90%;
+  @media screen and (max-width: $breakXL) {
+    max-width: $containerWidthXL;
+  }
+
+  @media screen and (max-width: $breakL) {
+    max-width: $containerWidthL;
+  }
+
+  @media screen and (max-width: $breakM) {
+    max-width: $containerWidthM;
   }
 }
 
