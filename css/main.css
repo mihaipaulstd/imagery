@@ -54,7 +54,7 @@ html {
   height: 160px;
   width: 100%;
   border-radius: 4px;
-  margin: 50px auto;
+  margin: 25px auto 50px;
   -webkit-box-shadow: 0 2px 5px #00000033;
           box-shadow: 0 2px 5px #00000033;
 }
@@ -67,7 +67,7 @@ html {
 
 .formInput {
   position: relative;
-  width: calc(17.5% + 100px);
+  width: calc(17.5% + 200px);
   max-width: 90%;
   margin: 8px auto;
   padding: 5px 8px;
@@ -137,5 +137,31 @@ html {
 .imageCard.blurred {
   -webkit-filter: blur(1px);
           filter: blur(1px);
+}
+
+.Modal {
+  border: none !important;
+  outline: none !important;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.Modal img {
+  max-width: 90vw;
+  max-height: 90vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000000BB;
 }
 /*# sourceMappingURL=main.css.map */
