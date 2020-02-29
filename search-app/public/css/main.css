@@ -11,7 +11,7 @@ html {
 }
 
 .container {
-  max-width: 70%;
+  max-width: 75%;
   margin: 0 auto;
   position: relative;
   overflow: visible;
@@ -20,25 +20,25 @@ html {
 
 @media screen and (max-width: 2400px) {
   .container {
-    max-width: 75%;
+    max-width: 80%;
   }
 }
 
 @media screen and (max-width: 1800px) {
   .container {
-    max-width: 80%;
+    max-width: 85%;
   }
 }
 
 @media screen and (max-width: 1200px) {
   .container {
-    max-width: 85%;
+    max-width: 90%;
   }
 }
 
 @media screen and (max-width: 768px) {
   .container {
-    max-width: 90%;
+    max-width: 95%;
   }
 }
 
