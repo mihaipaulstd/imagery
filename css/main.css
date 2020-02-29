@@ -45,6 +45,10 @@ html {
 .app {
   width: 100%;
   height: 100%;
+  -webkit-transition: -webkit-filter 200ms ease-out;
+  transition: -webkit-filter 200ms ease-out;
+  transition: filter 200ms ease-out;
+  transition: filter 200ms ease-out, -webkit-filter 200ms ease-out;
 }
 
 .app.blurred {
@@ -84,10 +88,10 @@ html {
 
 .formInput {
   position: relative;
-  width: calc(17.5% + 200px);
+  width: calc(20% + 200px);
   max-width: 90%;
   margin: 8px auto;
-  padding: 5px 15px;
+  padding: 5px 10px;
   border: none;
   outline: none;
   font-size: 110%;
@@ -127,10 +131,6 @@ html {
 .infinite-scroll-component {
   overflow: hidden !important;
   max-width: 100%;
-  -webkit-transition: -webkit-filter 200ms ease-out;
-  transition: -webkit-filter 200ms ease-out;
-  transition: filter 200ms ease-out;
-  transition: filter 200ms ease-out, -webkit-filter 200ms ease-out;
 }
 
 .imageContainer:after,
