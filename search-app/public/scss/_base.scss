@@ -8,6 +8,9 @@
 
 //Colors
 $white:             #FFFFFF;
+$halfWhite:         #FFFFFFAA;
+$thirdWhite:        #FFFFFF55;
+$transparentWhite:  #FFFFFF0A;
 $darkgrey:          #131313;
 $turquoise:         #40E0D0;
 $transparentBlack:  #00000033;
@@ -15,7 +18,8 @@ $black:             #000000;
 
 //Box shadows
 $searchFormShadow:  0 2px 5px $transparentBlack;
-$formInputShadow:   0 2px 0px $turquoise;
+$formInputShadowBlur:   0px 2px 0px $transparentWhite;
+$formInputShadowFocus:   0px 2px 0px $thirdWhite;
 
 //Variables
 $breakXXL: 2400px;

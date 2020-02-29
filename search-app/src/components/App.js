@@ -61,12 +61,12 @@ class App extends Component {
       showModal: true,
       currentImage: imageProperties
     })
-    document.querySelector('.imageContainer').classList.toggle('blurred');
+    document.querySelector('.app').classList.toggle('blurred');
   }
 
   handleCloseModal() {
     this.setState({ showModal: false });
-    document.querySelector('.imageContainer').classList.toggle('blurred');
+    document.querySelector('.app').classList.toggle('blurred');
   }
 
   
