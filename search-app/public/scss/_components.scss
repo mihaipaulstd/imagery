@@ -10,7 +10,7 @@
   align-items:      center;
   text-align:       center;
   background-color: $transparentBlack;
-  height:           160px;
+  height:           120px;
   width:            100%;
   border-radius:    4px;
   margin:           25px auto 50px;
@@ -80,11 +80,23 @@
   img {
     display: block;
     width: 100%;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
 
   &.hidden {
-    opacity: .15;
+    opacity: .3;
+
+    img {
+
+      &:hover {
+        pointer-events: none;
+        cursor: default;
+      }
+    }
   }
 
   &.blurred {

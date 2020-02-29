@@ -14,7 +14,7 @@ class FormInput extends Component {
 
   render() {
     return (
-      <input className="formInput" type="text" spellCheck="false" value={ this.state.term } onChange={ this.onInputChange }/>
+      <input className="formInput" type="text" spellCheck="false" value={ this.state.term } onChange={ this.onInputChange } autoFocus />
     )
   }
 

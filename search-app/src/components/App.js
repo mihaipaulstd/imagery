@@ -103,7 +103,7 @@ class App extends Component {
           {this.state.images.map((image, index) =>
             <ImageCard
               key={ image.id }
-              opacityDelay={ 75 * index }
+              opacityDelay={ 25 * index }
               src={ image.src.large }
               imageProperties={ image }
               triggerModal={ this.handleOpenModal }

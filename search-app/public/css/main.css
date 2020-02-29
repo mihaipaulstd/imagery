@@ -7,7 +7,7 @@
 }
 
 html {
-  background-color: #333333;
+  background-color: #131313;
 }
 
 .container {
@@ -76,7 +76,7 @@ html {
   outline: none;
   font-size: 110%;
   color: #6ce7db;
-  background-color: #333333;
+  background-color: #131313;
   -webkit-transition: -webkit-box-shadow 100ms ease-out;
   transition: -webkit-box-shadow 100ms ease-out;
   transition: box-shadow 100ms ease-out;
@@ -130,8 +130,17 @@ html {
   width: 100%;
 }
 
+.imageCard img:hover {
+  cursor: pointer;
+}
+
 .imageCard.hidden {
   opacity: .15;
+}
+
+.imageCard.hidden img:hover {
+  pointer-events: none;
+  cursor: default;
 }
 
 .imageCard.blurred {

@@ -19,7 +19,7 @@ class SearchForm extends Component {
 
   onFormSubmit(e) {
     e.preventDefault();
-    
+    e.target.querySelector('input').blur();
     this.props.onSubmit(this.state.term);
   }
   
