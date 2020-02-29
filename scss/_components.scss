@@ -58,15 +58,25 @@
 
 .imageCardSizer,
 .imageCard {
+  
   width: $imageWidth;
 
-  @media screen and (max-width: $breakLarge) {
-    width: $imageWidthLarge;
+  @media screen and (max-width: $breakXXL) {
+    width: $imageWidthXXL;
   }
 
-  @media screen and (max-width: $breakMedium) {
-    width: $imageWidthMedium;
+  @media screen and (max-width: $breakXL) {
+    width: $imageWidthXL;
   }
+
+  @media screen and (max-width: $breakL) {
+    width: $imageWidthL;
+  }
+
+  @media screen and (max-width: $breakM) {
+    width: $imageWidthM;
+  }
+
 }
 
 

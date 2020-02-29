@@ -17,11 +17,20 @@ $black:             #000000;
 $searchFormShadow:  0 2px 5px $transparentBlack;
 $formInputShadow:   0 2px 0px $turquoise;
 
-//Breaks
-$breakLarge:  1200px;
-$breakMedium: 768px;
-
 //Variables
-$imageWidth: 25%;
-$imageWidthLarge: 33.333%;
-$imageWidthMedium: 50%;
+$breakXXL: 2400px;
+$breakXL: 1800px;
+$breakL:  1200px;
+$breakM: 768px;
+
+$imageWidth: 16.66%;
+$imageWidthXXL: 20%;
+$imageWidthXL: 25%;
+$imageWidthL: 33.333%;
+$imageWidthM: 50%;
+
+$containerWidth: 70%;
+$containerWidthXXL: 75%;
+$containerWidthXL: 80%;
+$containerWidthL: 85%;
+$containerWidthM: 90%;
