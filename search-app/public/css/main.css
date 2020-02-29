@@ -112,8 +112,8 @@ html {
 
 .imageContainer.blurred,
 .infinite-scroll-component.blurred {
-  -webkit-filter: blur(5px);
-          filter: blur(5px);
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
 }
 
 .imageContainer:after,
@@ -121,12 +121,6 @@ html {
   content: '';
   display: block;
   clear: both;
-}
-
-.imageContainer .blurred,
-.infinite-scroll-component .blurred {
-  -webkit-filter: blur(1px);
-          filter: blur(1px);
 }
 
 .imageCardSizer,

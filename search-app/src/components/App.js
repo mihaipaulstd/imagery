@@ -24,7 +24,6 @@ class App extends Component {
     };
     this.fetchImages = this.fetchImages.bind(this);
     this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleLoadModal = this.handleLoadModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
@@ -62,9 +61,6 @@ class App extends Component {
       showModal: true,
       currentImage: imageProperties
     })
-  }
-  
-  handleLoadModal() {
     document.querySelector('.imageContainer').classList.toggle('blurred');
   }
 
@@ -113,7 +109,6 @@ class App extends Component {
                   ? this.state.currentImage.src.original
                   : '' 
                 }
-                onLoad={ this.handleLoadModal }
               >
               </img>
           </ReactModal>
