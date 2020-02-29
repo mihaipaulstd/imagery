@@ -51,7 +51,7 @@ html {
           align-items: center;
   text-align: center;
   background-color: #00000033;
-  height: 160px;
+  height: 120px;
   width: 100%;
   border-radius: 4px;
   margin: 25px auto 50px;
@@ -135,7 +135,7 @@ html {
 }
 
 .imageCard.hidden {
-  opacity: .15;
+  opacity: .075;
 }
 
 .imageCard.hidden img:hover {
