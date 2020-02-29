@@ -15,15 +15,14 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      per_load: 30,
-      loads: 1,
+      per_load: 20,
+      loads: 0,
       images: new Array(),
       currentImage: new Object(),
       currentTerm: null,
       showModal: false
     };
-    this.submitHandler = this.submitHandler.bind(this);
-    this.fetchImagesOnScroll = this.fetchImagesOnScroll.bind(this);
+    this.fetchImages = this.fetchImages.bind(this);
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
@@ -40,35 +39,19 @@ class App extends Component {
     )
   }
 
-  submitHandler(term) {
+  fetchImages(searchTerm) {
     pexels.get('/v1/search', {
       params: {
-        query: term,
-        per_page: this.state.per_load,
-        page: this.state.loads
-      }
-    })
-      .then(object => {
-        this.setState({
-          images: object.data.photos,
-          currentTerm: term
-        })
-      });
-  }
-  
-  fetchImagesOnScroll() {
-    pexels.get('/v1/search', {
-      params: {
-        query: this.state.currentTerm,
+        query: searchTerm || this.state.currentTerm,
         per_page: this.state.per_load,
         page: this.state.loads + 1
       }
     })
       .then(object => {
         this.setState({
-          // images: this.state.images.concat(object.data.photos),
           images: [...this.state.images, ...object.data.photos],
-          loads: this.state.loads + 1
+          loads: this.state.loads + 1,
+          currentTerm: searchTerm || this.state.currentTerm
         })
       });
   }
@@ -78,7 +61,6 @@ class App extends Component {
       showModal: true,
       currentImage: imageProperties
     })
-
   }
   
   handleCloseModal() {
@@ -88,11 +70,11 @@ class App extends Component {
   render() {
     return (
       <div className="app container">
-        <SearchForm onSubmit={ this.submitHandler } />
+        <SearchForm onSubmit={ this.fetchImages } />
         <InfiniteScroll
           className="imageContainer"
           dataLength={ this.state.images.length }
-          next={ this.fetchImagesOnScroll }
+          next={ this.fetchImages }
           scrollThreshold={ 0.7 }
           hasMore={ true }
           loader={ <div /> }
