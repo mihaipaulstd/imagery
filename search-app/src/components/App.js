@@ -13,7 +13,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      per_page: 20,
+      per_page: 40,
       page: 1,
       images: [],
       currentTerm: null
@@ -78,7 +78,7 @@ class App extends Component {
           className="imageContainer"
           dataLength={ this.state.images.length }
           next={ this.fetchImagesOnScroll }
-          scrollThreshold={ 0.75 }
+          scrollThreshold={ 0.8 }
           hasMore={ true }
           loader={ <div /> }
         >
@@ -89,7 +89,7 @@ class App extends Component {
           {this.state.images.map((image, index) =>
             <ImageCard
               key={ image.id }
-              opacityDelay={ 50 * index }
+              opacityDelay={ 75 * index }
               src={ image.src.large } 
             />
           )}
