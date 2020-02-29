@@ -47,11 +47,20 @@
 .infinite-scroll-component {
   overflow: hidden!important;
   max-width: 100%;
+  transition: filter 200ms ease-out;
+
+  &.blurred {
+    filter: blur(5px);
+  }
 
   &:after {
     content: '';
     display: block;
     clear: both;
+  }
+
+  .blurred {
+    filter: blur(1px);
   }
 
 }
@@ -109,11 +118,10 @@
     }
   }
 
-  &.blurred {
-    filter: blur(1px);
-  }
- 
+  
 }
+
+
 
 .Modal {
   border: none!important;
