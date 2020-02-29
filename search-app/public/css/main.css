@@ -48,8 +48,8 @@ html {
 }
 
 .app.blurred {
-  -webkit-filter: blur(2px);
-          filter: blur(2px);
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
 }
 
 .searchForm {
@@ -99,11 +99,28 @@ html {
   transition: color 150ms ease-out, -webkit-box-shadow 150ms ease-out;
   transition: box-shadow 150ms ease-out, color 150ms ease-out;
   transition: box-shadow 150ms ease-out, color 150ms ease-out, -webkit-box-shadow 150ms ease-out;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .formInput:focus {
   -webkit-box-shadow: 0px 2px 0px #FFFFFF55;
           box-shadow: 0px 2px 0px #FFFFFF55;
+}
+
+.formInput::-webkit-input-placeholder {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.formInput:-ms-input-placeholder {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.formInput::-ms-input-placeholder {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.formInput::placeholder {
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .imageContainer,
@@ -114,12 +131,6 @@ html {
   transition: -webkit-filter 200ms ease-out;
   transition: filter 200ms ease-out;
   transition: filter 200ms ease-out, -webkit-filter 200ms ease-out;
-}
-
-.imageContainer.blurred,
-.infinite-scroll-component.blurred {
-  -webkit-filter: blur(2px);
-          filter: blur(2px);
 }
 
 .imageContainer:after,
