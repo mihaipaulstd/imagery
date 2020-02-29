@@ -47,6 +47,11 @@ html {
   height: 100%;
 }
 
+.app.blurred {
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+}
+
 .searchForm {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -62,19 +67,19 @@ html {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  background-color: #00000033;
+  background-color: transparent;
   height: 120px;
   width: 100%;
-  border-radius: 4px;
-  margin: 25px auto 50px;
-  -webkit-box-shadow: 0 2px 5px #00000033;
-          box-shadow: 0 2px 5px #00000033;
+  border-radius: 30px;
+  margin: 0 auto 50px;
 }
 
 .formTitle {
   font-weight: 400;
   margin: 8px 0;
   color: #FFFFFF;
+  font-family: 'Yellowtail', sans-serif;
+  font-size: 40px;
 }
 
 .formInput {
@@ -82,22 +87,23 @@ html {
   width: calc(17.5% + 200px);
   max-width: 90%;
   margin: 8px auto;
-  padding: 5px 8px;
-  border-radius: 2px;
+  padding: 5px 15px;
   border: none;
   outline: none;
   font-size: 110%;
-  color: #6ce7db;
-  background-color: #131313;
-  -webkit-transition: -webkit-box-shadow 100ms ease-out;
-  transition: -webkit-box-shadow 100ms ease-out;
-  transition: box-shadow 100ms ease-out;
-  transition: box-shadow 100ms ease-out, -webkit-box-shadow 100ms ease-out;
+  color: #FFFFFF;
+  background-color: transparent;
+  -webkit-box-shadow: 0px 2px 0px #FFFFFF0A;
+          box-shadow: 0px 2px 0px #FFFFFF0A;
+  -webkit-transition: color 150ms ease-out, -webkit-box-shadow 150ms ease-out;
+  transition: color 150ms ease-out, -webkit-box-shadow 150ms ease-out;
+  transition: box-shadow 150ms ease-out, color 150ms ease-out;
+  transition: box-shadow 150ms ease-out, color 150ms ease-out, -webkit-box-shadow 150ms ease-out;
 }
 
 .formInput:focus {
-  -webkit-box-shadow: 0 2px 0px #40E0D0;
-          box-shadow: 0 2px 0px #40E0D0;
+  -webkit-box-shadow: 0px 2px 0px #FFFFFF55;
+          box-shadow: 0px 2px 0px #FFFFFF55;
 }
 
 .imageContainer,
@@ -112,8 +118,8 @@ html {
 
 .imageContainer.blurred,
 .infinite-scroll-component.blurred {
-  -webkit-filter: blur(3px);
-          filter: blur(3px);
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
 }
 
 .imageContainer:after,
@@ -158,12 +164,13 @@ html {
 
 .imageCard {
   float: left;
-  padding: 5px;
+  padding: 6px;
 }
 
 .imageCard img {
   display: block;
   width: 100%;
+  border-radius: 3px;
 }
 
 .imageCard img:hover {

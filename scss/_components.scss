@@ -1,6 +1,10 @@
 .app {
   width: 100%;
   height: 100%;
+
+  &.blurred {
+    filter: blur(2px);
+  }
 }
 
 .searchForm {
@@ -9,18 +13,21 @@
   justify-content:  center;
   align-items:      center;
   text-align:       center;
-  background-color: $transparentBlack;
+  background-color: transparent;
   height:           120px;
   width:            100%;
-  border-radius:    4px;
-  margin:           25px auto 50px;
-  box-shadow:       $searchFormShadow;
+  border-radius:    30px;
+  margin:           0 auto 50px;
+  // box-shadow:       $searchFormShadow;
+
 }
 
 .formTitle {
   font-weight:  400;
   margin:       8px 0;
   color:        $white;
+  font-family: 'Yellowtail', sans-serif;
+  font-size:    40px;
 }
 
 .formInput {
@@ -28,17 +35,18 @@
   width:            calc(17.5% + 200px);
   max-width:        90%;
   margin:           8px auto;
-  padding:          5px 8px;
-  border-radius:    2px;
+  padding:          5px 15px;
   border:           none;
   outline:          none;
   font-size:        110%;
-  color:            lighten($turquoise, 10);
-  background-color: $darkgrey;
-  transition:       box-shadow 100ms ease-out;
-
+  color:            $white;
+  background-color: transparent;
+  box-shadow:       $formInputShadowBlur;
+  transition:       box-shadow 150ms ease-out,
+                    color 150ms ease-out;
+  
   &:focus {
-    box-shadow: $formInputShadow;
+    box-shadow: $formInputShadowFocus;
   }
 
 }
@@ -48,9 +56,10 @@
   overflow: hidden!important;
   max-width: 100%;
   transition: filter 200ms ease-out;
+  
 
   &.blurred {
-    filter: blur(3px);
+    filter: blur(2px);
   }
 
   &:after {
@@ -64,7 +73,6 @@
 
 .imageCardSizer,
 .imageCard {
-  
   width: $imageWidth;
 
   @media screen and (max-width: $breakXXL) {
@@ -90,12 +98,13 @@
 
 .imageCard {
   float: left;
-  padding: 5px;
+  padding: 6px;
 
 
   img {
     display: block;
     width: 100%;
+    border-radius: 3px;
 
     &:hover {
       cursor: pointer;
