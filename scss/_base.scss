@@ -1,0 +1,27 @@
+// Resets
+* {
+  margin:       0;
+  padding:      0;
+  box-sizing:   border-box;
+  font-family:  sans-serif;
+}
+
+//Colors
+$white:             #FFFFFF;
+$darkgrey:          #333333;
+$turquoise:         #40E0D0;
+$transparentBlack:  #00000033;
+$black:             #000000;
+
+//Box shadows
+$searchFormShadow:  0 2px 5px $transparentBlack;
+$formInputShadow:   0 2px 0px $turquoise;
+
+//Breaks
+$breakLarge:  1200px;
+$breakMedium: 768px;
+
+//Variables
+$imageWidth: 25%;
+$imageWidthLarge: 33.333%;
+$imageWidthMedium: 50%;
