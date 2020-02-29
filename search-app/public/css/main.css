@@ -11,7 +11,7 @@ html {
 }
 
 .container {
-  max-width: 75%;
+  max-width: 80%;
   margin: 0 auto;
   position: relative;
   overflow: visible;
@@ -20,7 +20,7 @@ html {
 
 @media screen and (max-width: 1200px) {
   .container {
-    max-width: 80%;
+    max-width: 85%;
   }
 }
 
@@ -88,11 +88,14 @@ html {
           box-shadow: 0 2px 0px #40E0D0;
 }
 
-.imageContainer {
-  width: 100%;
+.imageContainer,
+.infinite-scroll-component {
+  overflow: hidden !important;
+  margin: 0 auto !important;
 }
 
-.imageContainer:after {
+.imageContainer:after,
+.infinite-scroll-component:after {
   content: '';
   display: block;
   clear: both;
@@ -103,17 +106,32 @@ html {
   width: 25%;
 }
 
+@media screen and (max-width: 1200px) {
+  .imageCardSizer,
+  .imageCard {
+    width: 33.333%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .imageCardSizer,
+  .imageCard {
+    width: 50%;
+  }
+}
+
 .imageCard {
   float: left;
-  margin: 2.5px 0;
+  padding: 5px;
 }
 
 .imageCard img {
-  max-width: 100%;
+  display: block;
+  width: 100%;
 }
 
 .imageCard.hidden {
-  opacity: .025;
+  opacity: .15;
 }
 
 .imageCard.blurred {

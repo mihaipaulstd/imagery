@@ -13,7 +13,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      per_page: 9,
+      per_page: 20,
       page: 1,
       images: [],
       currentTerm: null
@@ -29,7 +29,8 @@ class App extends Component {
       new Masonry(imageContainer, {
         itemSelector: '.imageCard',
         columnWidth: '.imageCardSizer',
-        percentPosition: true
+        percentPosition: true,
+        
       }).layout()
     );
 
@@ -77,16 +78,18 @@ class App extends Component {
           className="imageContainer"
           dataLength={ this.state.images.length }
           next={ this.fetchImagesOnScroll }
-          scrollThreshold={ 0.95 }
+          scrollThreshold={ 0.75 }
           hasMore={ true }
           loader={ <div /> }
         >
+
           <div className="imageCardSizer"></div>
-          {this.state.images.map(image =>
+
+
+          {this.state.images.map((image, index) =>
             <ImageCard
               key={ image.id }
-              opacityDelay={ 1500 }
-              blurDelay={ 2000 }
+              opacityDelay={ 50 * index }
               src={ image.src.large } 
             />
           )}
