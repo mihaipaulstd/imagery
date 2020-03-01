@@ -57,8 +57,8 @@ header {
 .searchForm {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 2fr;
-      grid-template-columns: 1fr 2fr;
+  -ms-grid-columns: 2fr 3fr;
+      grid-template-columns: 2fr 3fr;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
