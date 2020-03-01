@@ -84,6 +84,10 @@ header {
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .formInput {
@@ -113,25 +117,35 @@ header {
 
 .formInput::-webkit-input-placeholder {
   font-family: 'Josefin Sans', sans-serif;
+  -webkit-user-select: none;
+          user-select: none;
 }
 
 .formInput:-ms-input-placeholder {
   font-family: 'Josefin Sans', sans-serif;
+  -ms-user-select: none;
+      user-select: none;
 }
 
 .formInput::-ms-input-placeholder {
   font-family: 'Josefin Sans', sans-serif;
+  -ms-user-select: none;
+      user-select: none;
 }
 
 .formInput::placeholder {
   font-family: 'Josefin Sans', sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .imageContainer,
 .infinite-scroll-component {
   overflow: hidden !important;
   max-width: 100%;
-  margin: 50px 0;
+  margin: 15px 0 50px;
 }
 
 .imageContainer:after,
@@ -176,7 +190,11 @@ header {
 
 .imageCard {
   float: left;
-  padding: 6px;
+  padding: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .imageCard img {
@@ -223,10 +241,10 @@ header {
   bottom: 0;
   background-color: #000000BB;
   z-index: 10;
-  -webkit-transition: -webkit-backdrop-filter 200ms ease-out;
-  transition: -webkit-backdrop-filter 200ms ease-out;
-  transition: backdrop-filter 200ms ease-out;
-  transition: backdrop-filter 200ms ease-out, -webkit-backdrop-filter 200ms ease-out;
+  -webkit-transition: -webkit-backdrop-filter 350ms ease-in-out;
+  transition: -webkit-backdrop-filter 350ms ease-in-out;
+  transition: backdrop-filter 350ms ease-in-out;
+  transition: backdrop-filter 350ms ease-in-out, -webkit-backdrop-filter 350ms ease-in-out;
 }
 
 .Overlay.backdropBlurred {
