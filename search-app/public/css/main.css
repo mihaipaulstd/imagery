@@ -131,7 +131,7 @@ header {
 .infinite-scroll-component {
   overflow: hidden !important;
   max-width: 100%;
-  margin: 50px 0;
+  margin: 10px 0 50px;
 }
 
 .imageContainer:after,
@@ -176,7 +176,7 @@ header {
 
 .imageCard {
   float: left;
-  padding: 6px;
+  padding: 5px;
 }
 
 .imageCard img {
@@ -223,10 +223,10 @@ header {
   bottom: 0;
   background-color: #000000BB;
   z-index: 10;
-  -webkit-transition: -webkit-backdrop-filter 200ms ease-out;
-  transition: -webkit-backdrop-filter 200ms ease-out;
-  transition: backdrop-filter 200ms ease-out;
-  transition: backdrop-filter 200ms ease-out, -webkit-backdrop-filter 200ms ease-out;
+  -webkit-transition: -webkit-backdrop-filter 350ms ease-in-out;
+  transition: -webkit-backdrop-filter 350ms ease-in-out;
+  transition: backdrop-filter 350ms ease-in-out;
+  transition: backdrop-filter 350ms ease-in-out, -webkit-backdrop-filter 350ms ease-in-out;
 }
 
 .Overlay.backdropBlurred {

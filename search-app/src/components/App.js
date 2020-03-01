@@ -27,6 +27,10 @@ class App extends Component {
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
+  componentDidMount() {
+    this.fetchImages();
+  }
+
   componentDidUpdate() {
     const imageContainer = document.querySelector('.imageContainer');
     
@@ -40,18 +44,20 @@ class App extends Component {
   }
 
   fetchImages(searchTerm) {
-    pexels.get('/v1/search', {
+    const term = searchTerm || this.state.currentTerm;
+    
+    pexels.get(term ? '/v1/search' : '/v1/curated', {
       params: {
-        query: searchTerm || this.state.currentTerm,
+        query: term ? term : '',
         per_page: this.state.per_load,
         page: this.state.loads + 1
       }
     })
-      .then(object => {
+      .then(response => {
         this.setState({
-          images: searchTerm ? object.data.photos : [...this.state.images, ...object.data.photos],
-          loads: this.state.loads + 1,
-          currentTerm: searchTerm || this.state.currentTerm
+          images: searchTerm ? response.data.photos : [...this.state.images, ...response.data.photos],
+          loads: searchTerm ? 0 : this.state.loads + 1,
+          currentTerm: term
         })
       })
       .catch(error => { });
@@ -89,7 +95,7 @@ class App extends Component {
 
           {this.state.images.map((image, index) =>
             <ImageCard
-              key={ imagesLoaded.id }
+              key={ image.id }
               opacityDelay={ 15 * index }
               src={ image.src.large }
               image={ image }
@@ -107,7 +113,7 @@ class App extends Component {
               <img
                 src={
                   this.state.currentImage.src !== undefined
-                  ? this.state.currentImage.src.original
+                  ? this.state.currentImage.src.large2x
                   : '' 
                 }
                 alt=""
