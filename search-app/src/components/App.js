@@ -1,46 +1,33 @@
 import React, { Component } from 'react';
-import InfiniteScroll from 'react-infinite-scroll-component';
-import Masonry from 'masonry-layout';
-import imagesLoaded from 'imagesloaded';
-import ReactModal from 'react-modal';
 
-import ImageCard from './ImageCard';
 import SearchForm from './SearchForm';
+import ImageCardContainer from './ImageCardContainer'
+import Modal from './Modal'
 
 import pexels from '../api/pexels';
-
-ReactModal.setAppElement('#root');
 
 class App extends Component {
   constructor() {
     super();
+
     this.state = {
       per_load: 20,
       loads: 0,
       images: [],
       currentImage: {},
       currentTerm: null,
-      showModal: false
+      isModalOpen: false
     };
+
     this.fetchImages = this.fetchImages.bind(this);
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.setModal = this.setModal.bind(this);
+    this.setCurrentImage = this.setCurrentImage.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
     this.fetchImages();
-  }
-
-  componentDidUpdate() {
-    const imageContainer = document.querySelector('.imageContainer');
-    
-    imagesLoaded(imageContainer, () => 
-      new Masonry(imageContainer, {
-        itemSelector: '.imageCard',
-        columnWidth: '.imageCardSizer',
-        percentPosition: true
-      }).layout()
-    )
   }
 
   fetchImages(searchTerm) {
@@ -63,64 +50,41 @@ class App extends Component {
       .catch(error => { });
   }
 
-  handleOpenModal({ image }) {
-    this.setState({
-      showModal: true,
-      currentImage: image
-    })
-    document.querySelector('.Overlay').classList.toggle('backdropBlurred');
+  setModal(image) {
+    this.setCurrentImage(image);
+    this.openModal();
   }
 
-  handleCloseModal() {
-    this.setState({ showModal: false });
-    document.querySelector('.Overlay').classList.toggle('backdropBlurred');
+  openModal() {
+    this.setState({ isModalOpen: true })
   }
 
+  closeModal() {
+    this.setState({ isModalOpen: false });
+  }
+
+  setCurrentImage(image) {
+    this.setState({ currentImage: image })
+  }
   
 
   render() {
     return (
       <div className="App container">
-        <SearchForm onSubmit={ this.fetchImages } />
-        <InfiniteScroll
-          className="imageContainer"
+        <SearchForm
+          onSubmit={ this.fetchImages }
+        />
+        <ImageCardContainer
           dataLength={ this.state.images.length }
-          next={ this.fetchImages }
-          scrollThreshold={ 0.8 }
-          hasMore={ true }
-          loader={ <div /> }
-        >
-
-          <div className="imageCardSizer"></div>
-
-          {this.state.images.map((image, index) =>
-            <ImageCard
-              key={ image.id }
-              opacityDelay={ 15 * index }
-              src={ image.src.large }
-              image={ image }
-              triggerModal={ this.handleOpenModal }
-            />
-          )}
-
-          <ReactModal 
-            isOpen={ this.state.showModal }
-            contentLabel="onRequestClose"
-            onRequestClose={ this.handleCloseModal }
-            className="Modal"
-            overlayClassName="Overlay"
-          >
-              <img
-                src={
-                  this.state.currentImage.src !== undefined
-                  ? this.state.currentImage.src.large2x
-                  : '' 
-                }
-                alt=""
-              >
-              </img>
-          </ReactModal>
-        </InfiniteScroll>
+          scrollFetchHandler={ this.fetchImages }
+          images={ this.state.images }
+          handleImagesOnClick={ this.setModal }
+        />
+        <Modal 
+          isOpen={ this.state.isModalOpen }
+          image={ this.state.currentImage }
+          onClose={ this.closeModal }
+        />
       </div>
     )
   }

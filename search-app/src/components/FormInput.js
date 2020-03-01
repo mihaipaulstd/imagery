@@ -14,7 +14,7 @@ class FormInput extends Component {
 
   render() {
     return (
-      <input className="formInput" type="text" spellCheck="false" placeholder="Search stock photos" value={ this.state.term } onChange={ this.onInputChange } autoFocus />
+      <input className="formInput" type="text" spellCheck="false" placeholder="Search stock photos" value={ this.state.term } onChange={ this.onInputChange } />
     )
   }
 

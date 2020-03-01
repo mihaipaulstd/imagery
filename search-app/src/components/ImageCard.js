@@ -5,45 +5,54 @@ class ImageCard extends Component {
     super(props);
 
     this.state = {
-      hidden: true,
-      blurred: true
+      isOpaque: false,
+      image: {}
     };
 
     this.imageRef = React.createRef();
 
-    this.show = this.show.bind(this);
-    this.triggerModal = this.triggerModal.bind(this);
+    this.setSelf = this.setSelf.bind(this);
+    this.setOpaque = this.setOpaque.bind(this);
+    this.onClick = this.onClick.bind(this);
 
   }
+
+  
 
   componentDidMount() {
-    setTimeout(() => {
-      this.show();
-    }, this.props.opacityDelay)
-
-    this.imageRef.current.addEventListener('click', this.triggerModal);
-
+    this.setSelf();
+    this.setOpaque();
+    this.onClick();
+    
   }
 
-  show() {
-    this.setState({ hidden: false })
+  setSelf() {
+    this.setState({ image: this.props.image })
+  }
+  
+  setOpaque() {
+    setTimeout( async () => {
+      this.setState({ isOpaque: true })
+    }, this.props.opacityDelay);
   }
 
-
-  triggerModal() {
-    this.props.triggerModal({ image: this.props.image });
+  onClick() {
+    this.imageRef.current.addEventListener('click', () => {
+      this.props.handleImagesOnClick(this.state.image);
+    });
   }
-
 
   render() {
     return (
-        <div className={ `imageCard ${this.state.hidden ? 'hidden' : '' }`}>
-          <img
-            src={ this.props.src }
-            ref={ this.imageRef }
-            alt=""
-          />
-        </div>
+      <div
+        className={`imageCard${this.state.isOpaque ? '' : ' hidden' }`}
+      >
+        <img
+          src={ this.props.image.src.large }
+          ref={ this.imageRef }
+          alt=""
+        />
+      </div>
     )
   }
 

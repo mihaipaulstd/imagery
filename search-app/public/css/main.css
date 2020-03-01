@@ -245,9 +245,6 @@ header {
   transition: -webkit-backdrop-filter 350ms ease-in-out;
   transition: backdrop-filter 350ms ease-in-out;
   transition: backdrop-filter 350ms ease-in-out, -webkit-backdrop-filter 350ms ease-in-out;
-}
-
-.Overlay.backdropBlurred {
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
 }
