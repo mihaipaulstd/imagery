@@ -61,12 +61,12 @@ class App extends Component {
       showModal: true,
       currentImage: imageProperties
     })
-    document.querySelector('.app').classList.toggle('blurred');
+    document.querySelector('.Overlay').classList.toggle('backdropBlurred');
   }
 
   handleCloseModal() {
     this.setState({ showModal: false });
-    document.querySelector('.app').classList.toggle('blurred');
+    document.querySelector('.Overlay').classList.toggle('backdropBlurred');
   }
 
   
@@ -79,7 +79,7 @@ class App extends Component {
           className="imageContainer"
           dataLength={ this.state.images.length }
           next={ this.fetchImages }
-          scrollThreshold={ 0.7 }
+          scrollThreshold={ 0.9 }
           hasMore={ true }
           loader={ <div /> }
         >
