@@ -53,7 +53,8 @@ class App extends Component {
           loads: this.state.loads + 1,
           currentTerm: searchTerm || this.state.currentTerm
         })
-      });
+      })
+      .catch(error => { });
   }
 
   handleOpenModal({ imageProperties }) {
@@ -73,13 +74,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app container">
+      <div className="App container">
         <SearchForm onSubmit={ this.fetchImages } />
         <InfiniteScroll
           className="imageContainer"
           dataLength={ this.state.images.length }
           next={ this.fetchImages }
-          scrollThreshold={ 0.9 }
+          scrollThreshold={ 0.8 }
           hasMore={ true }
           loader={ <div /> }
         >
@@ -105,7 +106,7 @@ class App extends Component {
           >
               <img
                 src={
-                  typeof this.state.currentImage.src !== 'undefined'
+                  this.state.currentImage.src !== undefined
                   ? this.state.currentImage.src.original
                   : '' 
                 }
