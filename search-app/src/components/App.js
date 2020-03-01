@@ -55,8 +55,8 @@ class App extends Component {
     })
       .then(response => {
         this.setState({
-          images: searchTerm ? response.data.photos : [...this.state.images, ...response.data.photos],
-          loads: searchTerm ? 0 : this.state.loads + 1,
+          images: searchTerm || !this.state.loads ? response.data.photos : [...this.state.images, ...response.data.photos],
+          loads: this.state.loads + 1,
           currentTerm: term
         })
       })

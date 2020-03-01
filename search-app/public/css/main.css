@@ -131,7 +131,7 @@ header {
 .infinite-scroll-component {
   overflow: hidden !important;
   max-width: 100%;
-  margin: 10px 0 50px;
+  margin: 15px 0 50px;
 }
 
 .imageContainer:after,
