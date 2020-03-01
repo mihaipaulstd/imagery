@@ -57,10 +57,10 @@ class App extends Component {
       .catch(error => { });
   }
 
-  handleOpenModal({ imageProperties }) {
+  handleOpenModal({ image }) {
     this.setState({
       showModal: true,
-      currentImage: imageProperties
+      currentImage: image
     })
     document.querySelector('.Overlay').classList.toggle('backdropBlurred');
   }
@@ -89,10 +89,10 @@ class App extends Component {
 
           {this.state.images.map((image, index) =>
             <ImageCard
-              key={ image.id }
+              key={ imagesLoaded.id }
               opacityDelay={ 15 * index }
               src={ image.src.large }
-              imageProperties={ image }
+              image={ image }
               triggerModal={ this.handleOpenModal }
             />
           )}

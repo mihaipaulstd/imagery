@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class FormTitle extends Component {
   render() {
     return (
-      <h1 className="formTitle">
+      <a href="/" className="formTitle">
         imagery.
-      </h1>
+      </a>
     )
   }
 

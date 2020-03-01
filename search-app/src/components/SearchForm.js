@@ -26,10 +26,12 @@ class SearchForm extends Component {
 
   render() {
     return (
-      <form onSubmit={ this.onFormSubmit } className="searchForm">
-        <FormTitle />
-        <FormInput onChange={ this.onInputChange }/>
-      </form>
+      <header>
+        <form onSubmit={ this.onFormSubmit } className="searchForm">
+          <FormTitle />
+          <FormInput onChange={ this.onInputChange }/>
+        </form>
+      </header>
     )
   }
 

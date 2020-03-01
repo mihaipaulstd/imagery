@@ -31,8 +31,7 @@ class ImageCard extends Component {
 
 
   triggerModal() {
-    this.props.triggerModal({ imageProperties: this.props.imageProperties });
-    
+    this.props.triggerModal({ image: this.props.image });
   }
 
 
