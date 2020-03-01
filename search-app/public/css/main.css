@@ -84,6 +84,10 @@ header {
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .formInput {
@@ -113,18 +117,28 @@ header {
 
 .formInput::-webkit-input-placeholder {
   font-family: 'Josefin Sans', sans-serif;
+  -webkit-user-select: none;
+          user-select: none;
 }
 
 .formInput:-ms-input-placeholder {
   font-family: 'Josefin Sans', sans-serif;
+  -ms-user-select: none;
+      user-select: none;
 }
 
 .formInput::-ms-input-placeholder {
   font-family: 'Josefin Sans', sans-serif;
+  -ms-user-select: none;
+      user-select: none;
 }
 
 .formInput::placeholder {
   font-family: 'Josefin Sans', sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .imageContainer,
@@ -177,6 +191,10 @@ header {
 .imageCard {
   float: left;
   padding: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .imageCard img {
