@@ -6,22 +6,50 @@ import ModalImage from './ModalImage'
 ReactModal.setAppElement('#root');
 
 class Modal extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false,
+      image: undefined
+    }
+
+    this.open = this.open.bind(this);
+    this.close = this.close.bind(this);
+  }
+
+
+  open(image) {
+    this.setState({
+      isOpen: true,
+      image: image
+    });
+  }
+  
+  close() {
+    this.setState({
+      isOpen: false
+    });
+  }
+
   render() {
     return (
       <ReactModal 
-        isOpen={ this.props.isOpen }
+        isOpen={ this.state.isOpen }
         contentLabel="onRequestClose"
-        onRequestClose={ this.props.onClose }
+        onRequestClose={ this.close }
         className="Modal"
-        overlayClassName="Overlay"
+        overlayClassName={ `Overlay${this.state.isOpen ? ' backdropBlurred' : '' }` }
       >
-          <ModalImage
-            src={
-              this.props.image.src !== undefined
-              ? this.props.image.src.large2x
-              : '' 
-            }
-          />
+        <ModalImage
+          src={
+            this.state.image
+            ? this.state.image.src.large2x
+            : '' 
+          }
+          alt=""
+        />
       </ReactModal>
     )
   }

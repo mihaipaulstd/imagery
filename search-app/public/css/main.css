@@ -241,10 +241,6 @@ header {
   bottom: 0;
   background-color: #000000BB;
   z-index: 10;
-  -webkit-transition: -webkit-backdrop-filter 350ms ease-in-out;
-  transition: -webkit-backdrop-filter 350ms ease-in-out;
-  transition: backdrop-filter 350ms ease-in-out;
-  transition: backdrop-filter 350ms ease-in-out, -webkit-backdrop-filter 350ms ease-in-out;
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
 }
