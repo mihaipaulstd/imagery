@@ -1,4 +1,4 @@
-App:    <mihaipaulstd.github.io/imagery>
+mihaipaulstd.github.io/imagery
 
 
 <!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
