@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import imagesLoaded from 'imagesloaded';
 
 import SearchForm from './SearchForm';
 import ImageCardContainer from './ImageCardContainer'
 import Modal from './Modal'
+
 
 
 import pexels from '../api/pexels';
@@ -13,7 +15,7 @@ class App extends Component {
 
     this.state = {
       per_load: 20,
-      loads: 0,
+      loads: Math.floor(Math.random() * 300),
       images: [],
       currentTerm: null
     };
@@ -40,11 +42,15 @@ class App extends Component {
       }
     })
       .then(response => {
-        this.setState({
-          images: searchTerm || !this.state.loads ? response.data.photos : [...this.state.images, ...response.data.photos],
-          loads: this.state.loads + 1,
-          currentTerm: term
-        })
+        imagesLoaded(document.querySelector('.imageCardContainer'), () => {
+          this.setState({
+            images: searchTerm || this.state.loads === 0 ? response.data.photos : [...this.state.images, ...response.data.photos],
+            loads: !response.data.photos.length ? 0 : this.state.loads + 1,
+            currentTerm: term
+          })
+        }
+    )
+        
       })
       .catch(error => { });
   }
