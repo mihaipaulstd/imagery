@@ -253,6 +253,10 @@ header {
   max-height: 90vh;
   -o-object-fit: contain;
      object-fit: contain;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .Overlay {
