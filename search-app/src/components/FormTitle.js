@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class FormTitle extends Component {
   render() {
     return (
-      <a href="/" className="formTitle">
+      <a href="/imagery" className="formTitle">
         imagery.
       </a>
     )
