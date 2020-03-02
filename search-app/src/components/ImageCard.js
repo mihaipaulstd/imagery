@@ -6,7 +6,7 @@ class ImageCard extends Component {
 
     this.state = {
       isOpaque: false,
-      image: {}
+      image: undefined
     };
 
     this.imageRef = React.createRef();
@@ -33,7 +33,7 @@ class ImageCard extends Component {
   }
   
   setOpaque() {
-    setTimeout( async () => {
+    setTimeout(() => {
       this.setState({
         isOpaque: true
       })
