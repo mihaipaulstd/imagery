@@ -4,6 +4,7 @@ import SearchForm from './SearchForm';
 import ImageCardContainer from './ImageCardContainer'
 import Modal from './Modal'
 
+
 import pexels from '../api/pexels';
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
       images: [],
       currentTerm: null
     };
+
 
     this.modal = React.createRef();
 
@@ -64,9 +66,6 @@ class App extends Component {
           handleImagesOnClick={ this.openModal }
         />
         <Modal
-          isOpen={ this.state.isModalOpen }
-          image={ this.state.currentImage }
-          onClose={ this.closeModal }
           ref={ this.modal }
         />
       </div>

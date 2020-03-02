@@ -27,12 +27,16 @@ class ImageCard extends Component {
   }
 
   setSelf() {
-    this.setState({ image: this.props.image })
+    this.setState({
+      image: this.props.image
+    })
   }
   
   setOpaque() {
     setTimeout( async () => {
-      this.setState({ isOpaque: true })
+      this.setState({
+        isOpaque: true
+      })
     }, this.props.opacityDelay);
   }
 
@@ -45,7 +49,7 @@ class ImageCard extends Component {
   render() {
     return (
       <div
-        className={`imageCard${this.state.isOpaque ? '' : ' hidden' }`}
+        className="imageCard"
       >
         <img
           src={ this.props.image.src.large }

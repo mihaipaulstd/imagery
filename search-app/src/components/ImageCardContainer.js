@@ -9,7 +9,7 @@ class ImageCardContainer extends Component {
 
 
   componentDidUpdate() {
-    const imageContainer = document.querySelector('.imageContainer');
+    const imageContainer = document.querySelector('.imageCardContainer');
     
     imagesLoaded(imageContainer, () => 
       new Masonry(imageContainer, {
@@ -22,7 +22,7 @@ class ImageCardContainer extends Component {
 
   render() {
     return (
-      <div className="imageContainer">
+      <main className="imageCardContainer">
         <InfiniteScroll
           dataLength={ this.props.dataLength }
           next={ this.props.scrollFetchHandler }
@@ -30,20 +30,19 @@ class ImageCardContainer extends Component {
           hasMore={ true }
           loader={ <div /> }
         >
+          <div className="imageCardSizer"></div>
 
-        <div className="imageCardSizer"></div>
-
-        {this.props.images.map((image, index) =>
-          <ImageCard
-            key={ image.id }
-            opacityDelay={ 15 * index }
-            src={ image.src.large }
-            image={ image }
-            handleImagesOnClick={ this.props.handleImagesOnClick }
-          />
-        )}
-      </InfiniteScroll>
-      </div>
+          {this.props.images.map((image, index) =>
+            <ImageCard
+              key={ image.id }
+              opacityDelay={ 15 * index }
+              src={ image.src.large }
+              image={ image }
+              handleImagesOnClick={ this.props.handleImagesOnClick }
+            />
+          )}
+        </InfiniteScroll>
+      </main>
       
     )
   }
