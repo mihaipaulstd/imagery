@@ -49,7 +49,7 @@ class ImageCard extends Component {
   render() {
     return (
       <div
-        className="imageCard"
+        className={`imageCard${this.state.isOpaque ? '' : ' hidden'}`}
       >
         <img
           src={ this.props.image.src.large }
