@@ -1,38 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 
-class FormInput extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { term: '' };
-    this.onInputChange = this.onInputChange.bind(this);
-  }
+import { setQuery } from '../actions/setQuery';
 
-  onInputChange(e) {
-    this.setState({ term: e.target.value });
-    this.props.onChange(e.target.value);
-  }
+const FormInput = ({ query, setQuery }) => 
+  <div className="formInputContainer">
+    <input
+      className="formInput"
+      type="text"
+      spellCheck="false"
+      placeholder="Search stock photos"
+      value={ query }
+      onChange={ e => setQuery(e.target.value) }
+    />
+    <button
+      type="submit"
+      className="searchIcon"
+    >
+      <i className="fas fa-search" />
+    </button>
+  </div>
 
-  render() {
-    return (
-      <div className="formInputContainer">
-        <input
-          className="formInput"
-          type="text"
-          spellCheck="false"
-          placeholder="Search stock photos"
-          value={ this.state.term }
-          onChange={ this.onInputChange }
-        />
-        <button
-          type="submit"
-          className="searchIcon"
-        >
-          <i className="fas fa-search" />
-        </button>
-      </div>
-    )
-  }
+const mapStateToProps = state => ({ query: state.query })
 
-}
-
-export default FormInput;
+export default connect(mapStateToProps, { setQuery })(FormInput);

@@ -1,40 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+
 
 import FormTitle from './FormTitle';
 import FormInput from './FormInput';
+import { fetchImages } from '../actions/fetchImages'
 
-class SearchForm extends Component {
-  constructor(props) {
-    super(props);
+const SearchForm = ({ fetchImages }) => 
+  <header>
+    <form
+      onSubmit={e => {
+        e.preventDefault();
+        fetchImages();
+      }}  
+      className="searchForm"
+    >
+      <FormTitle />
+      <FormInput />
+    </form>
+  </header>
 
-    this.state = { term: '' }
 
-    this.onInputChange = this.onInputChange.bind(this);
-    this.onFormSubmit = this.onFormSubmit.bind(this);
-  }
-
-  onInputChange(term) {
-    this.setState({ term: term });
-  }
-
-  onFormSubmit(e) {
-    e.preventDefault();
-    e.target.querySelector('input').blur();
-    this.props.onSubmit(this.state.term);
-  }
-  
-
-  render() {
-    return (
-      <header>
-        <form onSubmit={ this.onFormSubmit } className="searchForm">
-          <FormTitle />
-          <FormInput onChange={ this.onInputChange }/>
-        </form>
-      </header>
-    )
-  }
-
-}
-
-export default SearchForm;
+export default connect(null, { fetchImages })(SearchForm);

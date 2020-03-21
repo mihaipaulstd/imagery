@@ -1,59 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 import ReactModal from 'react-modal';
 
-import ModalImage from './ModalImage'
+import { closeModal } from '../actions/closeModal';
+import ModalImage from './ModalImage';
 
 ReactModal.setAppElement('#root');
 
-class Modal extends Component {
+const Modal = ({ closeModal, isModalOpen, image }) => 
+  <ReactModal 
+    isOpen={ isModalOpen }
+    onRequestClose={ closeModal }
+    className="Modal"
+    overlayClassName="Overlay"
+  >
+    <ModalImage />
+  </ReactModal>
 
-  constructor(props) {
-    super(props);
+const mapStateToProps = state => ({
+  isModalOpen: state.isModalOpen,
+  image: state.modalImage
+})
 
-    this.state = {
-      isOpen: false,
-      image: undefined
-    }
-
-    this.open = this.open.bind(this);
-    this.close = this.close.bind(this);
-  }
-
-
-  open(image) {
-    this.setState({
-      isOpen: true,
-      image: image
-    });
-  }
-  
-  close() {
-    this.setState({
-      isOpen: false
-    });
-  }
-
-  render() {
-    return (
-      <ReactModal 
-        isOpen={ this.state.isOpen }
-        contentLabel="onRequestClose"
-        onRequestClose={ this.close }
-        className="Modal"
-        overlayClassName={ `Overlay${this.state.isOpen ? ' backdropBlurred' : '' }` }
-      >
-        <ModalImage
-          src={
-            this.state.image
-            ? this.state.image.src.large2x
-            : '' 
-          }
-          alt=""
-        />
-      </ReactModal>
-    )
-  }
-}
-
-
-export default Modal;
+export default connect(mapStateToProps, { closeModal })(Modal);

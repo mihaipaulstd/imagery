@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 
-class ModalImage extends Component {
-  render() {
-    return (
-        <img
-          src={ this.props.src }
-          alt=""
-        />
-    )
-  }
-}
+const ModalImage = ({ modalImage }) => 
+  <img
+    src={ modalImage.src.original }
+    alt=""
+  />
 
+const mapStateToProps = state => ({
+  modalImage: state.modalImage
+})
 
-export default ModalImage;
+export default connect(mapStateToProps)(ModalImage);

@@ -1,65 +1,39 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 
-class ImageCard extends Component {
-  constructor(props) {
-    super(props);
+import { openModal } from '../actions/openModal';
 
-    this.state = {
-      isOpaque: false,
-      image: undefined
-    };
-
-    this.imageRef = React.createRef();
-
-    this.setSelf = this.setSelf.bind(this);
-    this.setOpaque = this.setOpaque.bind(this);
-    this.onClick = this.onClick.bind(this);
-
-  }
-
+const ImageCard = ({ image, opacityDelay, openModal }) => {
   
+  const [isOpaque, setIsOpaque] = useState(false);
 
-  componentDidMount() {
-    this.setSelf();
-    this.setOpaque();
-    this.onClick();
-    
-  }
-
-  setSelf() {
-    this.setState({
-      image: this.props.image
-    })
-  }
+  useEffect(() => {
+    setOpaque();
+  }, []);
   
-  setOpaque() {
+  const setOpaque = () => {
     setTimeout(() => {
-      this.setState({
-        isOpaque: true
-      })
-    }, this.props.opacityDelay);
+      setIsOpaque(true);
+    }, opacityDelay);
   }
-
-  onClick() {
-    this.imageRef.current.addEventListener('click', () => {
-      this.props.handleImagesOnClick(this.state.image);
-    });
-  }
-
-  render() {
-    return (
-      <div
-        className={`imageCard${this.state.isOpaque ? '' : ' hidden'}`}
-      >
-        <img
-          src={ this.props.image.src.large }
-          ref={ this.imageRef }
-          alt=""
-        />
-      </div>
-    )
-  }
-
+  
+  return (
+    <div
+      className={`imageCard${isOpaque ? '' : ' hidden'}`}
+      onClick={
+        // e => console.log(image)
+        () => {
+          openModal(image);
+        }
+      }
+    >
+      <img src={image.src.large} alt=""/>
+    </div>
+  )
 }
 
-export default ImageCard;
+const mapStateToProps = (state) => ({
+  modalImage: state.modalImage
+})
+
+export default connect(mapStateToProps, { openModal })(ImageCard);
