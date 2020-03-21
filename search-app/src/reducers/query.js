@@ -1,6 +1,6 @@
-import { SET_QUERY } from '../actions/actionTypes';
+import { SET_QUERY } from "../actions/actionTypes";
 
-export const queryReducer = (query = '', action) => {
+export const queryReducer = (query = "", action) => {
   switch (action.type) {
     case SET_QUERY:
       console.log(action.payload);
@@ -8,4 +8,4 @@ export const queryReducer = (query = '', action) => {
     default:
       return query;
   }
-}
+};

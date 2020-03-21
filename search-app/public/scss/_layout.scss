@@ -1,9 +1,8 @@
-
-.container{
-  max-width:        $containerWidth;
-  margin:           0 auto;
-  position:         relative;
-  overflow:         visible;
+.container {
+  max-width: $containerWidth;
+  margin: 0 auto;
+  position: relative;
+  overflow: visible;
   background-color: transparent;
 
   @media screen and (max-width: $breakXXL) {
@@ -22,4 +21,3 @@
     max-width: $containerWidthM;
   }
 }
-

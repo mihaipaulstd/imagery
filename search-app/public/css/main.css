@@ -76,7 +76,7 @@ header {
 
 .formTitle {
   color: #ffffff;
-  font-family: 'Yellowtail', sans-serif;
+  font-family: "Yellowtail", sans-serif;
   font-size: 40px;
   text-align: center;
   text-decoration: none;
@@ -96,49 +96,49 @@ header {
   max-width: 90%;
   margin: 8px auto;
   padding: 5px 30px 5px 7px;
-  -webkit-box-shadow: 0px 2px 0px #FFFFFF10;
-          box-shadow: 0px 2px 0px #FFFFFF10;
-  -webkit-transition: color 150ms ease-out, -webkit-box-shadow 150ms ease-out;
-  transition: color 150ms ease-out, -webkit-box-shadow 150ms ease-out;
-  transition: box-shadow 150ms ease-out, color 150ms ease-out;
-  transition: box-shadow 150ms ease-out, color 150ms ease-out, -webkit-box-shadow 150ms ease-out;
+  -webkit-box-shadow: 0px 2px 0px #ffffff10;
+          box-shadow: 0px 2px 0px #ffffff10;
+  -webkit-transition: color 150ms ease-out, -webkit-box-shadow 150ms ease-out;
+  transition: color 150ms ease-out, -webkit-box-shadow 150ms ease-out;
+  transition: box-shadow 150ms ease-out, color 150ms ease-out;
+  transition: box-shadow 150ms ease-out, color 150ms ease-out, -webkit-box-shadow 150ms ease-out;
 }
 
 .formInputContainer:focus-within {
-  -webkit-box-shadow: 0px 2px 0px #FFFFFF55;
-          box-shadow: 0px 2px 0px #FFFFFF55;
+  -webkit-box-shadow: 0px 2px 0px #ffffff55;
+          box-shadow: 0px 2px 0px #ffffff55;
 }
 
 .formInputContainer .formInput {
   border: none;
   outline: none;
   font-size: 110%;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: transparent;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   width: 100%;
 }
 
 .formInputContainer .formInput::-webkit-input-placeholder {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -webkit-user-select: none;
           user-select: none;
 }
 
 .formInputContainer .formInput:-ms-input-placeholder {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -ms-user-select: none;
       user-select: none;
 }
 
 .formInputContainer .formInput::-ms-input-placeholder {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -ms-user-select: none;
       user-select: none;
 }
 
 .formInputContainer .formInput::placeholder {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -152,7 +152,7 @@ header {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   background-color: transparent;
-  color: #FFFFFF10;
+  color: #ffffff10;
   border: none;
   outline: none;
   font-size: 14px;
@@ -160,7 +160,7 @@ header {
 }
 
 .formInputContainer:focus-within .searchIcon {
-  color: #FFFFFFAA;
+  color: #ffffffaa;
 }
 
 .imageCardContainer,
@@ -172,7 +172,7 @@ header {
 
 .imageCardContainer:after,
 .infinite-scroll-component:after {
-  content: '';
+  content: "";
   display: block;
   clear: both;
 }
@@ -230,7 +230,7 @@ header {
 }
 
 .imageCard.hidden {
-  opacity: .075;
+  opacity: 0;
 }
 
 .imageCard.hidden img:hover {
@@ -265,7 +265,7 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #000000BB;
+  background-color: #000000bb;
   z-index: 2;
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);

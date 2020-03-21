@@ -1,3 +1,6 @@
-import { CLOSE_MODAL } from './actionTypes';
+import { CLOSE_MODAL } from "./actionTypes";
 
-export const closeModal = image => ({ type: CLOSE_MODAL, payload: image });
+export const closeModal = image => ({
+  type: CLOSE_MODAL,
+  payload: image
+});

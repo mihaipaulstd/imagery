@@ -1,4 +1,4 @@
-import { SET_IMAGES_NO_PER_SCROLL_LOAD } from '../actions/actionTypes';
+import { SET_IMAGES_NO_PER_SCROLL_LOAD } from "../actions/actionTypes";
 
 export const perScrollLoadReducer = (per_load = 20, action) => {
   switch (action.type) {
@@ -7,4 +7,4 @@ export const perScrollLoadReducer = (per_load = 20, action) => {
     default:
       return per_load;
   }
-}
+};

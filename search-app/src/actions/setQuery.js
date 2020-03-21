@@ -1,3 +1,6 @@
-import { SET_QUERY } from './actionTypes';
+import { SET_QUERY } from "./actionTypes";
 
-export const setQuery = query => ({ type: SET_QUERY, payload: query });
+export const setQuery = query => ({
+  type: SET_QUERY,
+  payload: query
+});

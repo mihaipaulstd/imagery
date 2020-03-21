@@ -1,4 +1,4 @@
-import { SET_MODAL_IMAGE } from '../actions/actionTypes';
+import { SET_MODAL_IMAGE } from "../actions/actionTypes";
 
 export const modalImageReducer = (image = null, action) => {
   switch (action.type) {
@@ -6,5 +6,5 @@ export const modalImageReducer = (image = null, action) => {
       return action.payload;
     default:
       return image;
-    }
-}
+  }
+};

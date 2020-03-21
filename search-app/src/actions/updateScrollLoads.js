@@ -1,3 +1,5 @@
-import { SET_SCROLL_LOADS } from './actionTypes';
+import { SET_SCROLL_LOADS } from "./actionTypes";
 // debugger
-export const updateScrollLoads = () => ({ type: SET_SCROLL_LOADS });
+export const updateScrollLoads = () => ({
+  type: SET_SCROLL_LOADS
+});
