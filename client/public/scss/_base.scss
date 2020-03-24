@@ -1,0 +1,42 @@
+// Resets
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+//Colors
+$whiteFF: #ffffff;
+$whiteAA: #ffffffaa;
+$white55: #ffffff55;
+$white10: #ffffff10;
+$blackFF: #000000;
+$blackBB: #000000bb;
+$black88: #00000088;
+$black55: #00000055;
+$black33: #00000033;
+$darkgrey: #131313;
+
+//Box shadows
+$searchFormShadow: 0 2px 5px $black33;
+$formInputShadowBlur: 0px 2px 0px $white10;
+$formInputShadowFocus: 0px 2px 0px $white55;
+
+//Variables
+$breakXXL: 2400px;
+$breakXL: 1800px;
+$breakL: 1200px;
+$breakM: 768px;
+
+$imageWidth: 16.66%;
+$imageWidthXXL: 20%;
+$imageWidthXL: 25%;
+$imageWidthL: 33.333%;
+$imageWidthM: 50%;
+
+$containerWidth: 75%;
+$containerWidthXXL: 80%;
+$containerWidthXL: 85%;
+$containerWidthL: 90%;
+$containerWidthM: 95%;

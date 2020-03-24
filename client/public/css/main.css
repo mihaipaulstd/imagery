@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 75%;
+  margin: 0 auto;
+  position: relative;
+  overflow: visible;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 2400px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  .container {
+    max-width: 85%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
+html {
+  background-color: #131313;
+}
+
+.App {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.searchForm {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 3fr;
+      grid-template-columns: 2fr 3fr;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  background-color: #131313;
+  width: 100%;
+  padding: 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .searchForm {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.formTitle {
+  color: #ffffff;
+  font-family: "Yellowtail", sans-serif;
+  font-size: 40px;
+  text-align: center;
+  text-decoration: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.formInputContainer {
+  position: relative;
+  width: calc(20% + 200px);
+  max-width: 90%;
+  margin: 8px auto;
+  padding: 5px 30px 5px 7px;
+  -webkit-box-shadow: 0px 2px 0px #ffffff10;
+          box-shadow: 0px 2px 0px #ffffff10;
+  -webkit-transition: color 150ms ease-out, -webkit-box-shadow 150ms ease-out;
+  transition: color 150ms ease-out, -webkit-box-shadow 150ms ease-out;
+  transition: box-shadow 150ms ease-out, color 150ms ease-out;
+  transition: box-shadow 150ms ease-out, color 150ms ease-out, -webkit-box-shadow 150ms ease-out;
+}
+
+.formInputContainer:focus-within {
+  -webkit-box-shadow: 0px 2px 0px #ffffff55;
+          box-shadow: 0px 2px 0px #ffffff55;
+}
+
+.formInputContainer .formInput {
+  border: none;
+  outline: none;
+  font-size: 110%;
+  color: #ffffff;
+  background-color: transparent;
+  font-family: "Josefin Sans", sans-serif;
+  width: 100%;
+}
+
+.formInputContainer .formInput::-webkit-input-placeholder {
+  font-family: "Josefin Sans", sans-serif;
+  -webkit-user-select: none;
+          user-select: none;
+}
+
+.formInputContainer .formInput:-ms-input-placeholder {
+  font-family: "Josefin Sans", sans-serif;
+  -ms-user-select: none;
+      user-select: none;
+}
+
+.formInputContainer .formInput::-ms-input-placeholder {
+  font-family: "Josefin Sans", sans-serif;
+  -ms-user-select: none;
+      user-select: none;
+}
+
+.formInputContainer .formInput::placeholder {
+  font-family: "Josefin Sans", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.formInputContainer .searchIcon {
+  position: absolute;
+  top: 50%;
+  right: 7px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: transparent;
+  color: #ffffff10;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.formInputContainer:focus-within .searchIcon {
+  color: #ffffffaa;
+}
+
+.imageCardContainer,
+.infinite-scroll-component {
+  overflow: hidden !important;
+  max-width: 100%;
+  margin: 10px 0 50px;
+}
+
+.imageCardContainer:after,
+.infinite-scroll-component:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.imageCardSizer,
+.imageCard {
+  width: 16.66%;
+}
+
+@media screen and (max-width: 2400px) {
+  .imageCardSizer,
+  .imageCard {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  .imageCardSizer,
+  .imageCard {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .imageCardSizer,
+  .imageCard {
+    width: 33.333%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .imageCardSizer,
+  .imageCard {
+    width: 50%;
+  }
+}
+
+.imageCard {
+  float: left;
+  padding: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.imageCard img {
+  display: block;
+  width: 100%;
+  border-radius: 3px;
+}
+
+.imageCard img:hover {
+  cursor: pointer;
+}
+
+.imageCard.hidden {
+  opacity: 0;
+}
+
+.imageCard.hidden img:hover {
+  pointer-events: none;
+  cursor: default;
+}
+
+.Modal {
+  border: none !important;
+  outline: none !important;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.Modal img {
+  max-width: 90vw;
+  max-height: 90vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000000bb;
+  z-index: 2;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+}
+/*# sourceMappingURL=main.css.map */
