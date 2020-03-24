@@ -1,5 +1,6 @@
-import { SET_SCROLL_LOADS } from "./actionTypes";
+import { UPDATE_SCROLL_LOADS } from "./actionTypes";
 // debugger
-export const updateScrollLoads = () => ({
-  type: SET_SCROLL_LOADS
+export const updateScrollLoads = (loads = 0) => ({
+  type: UPDATE_SCROLL_LOADS,
+  payload: loads
 });

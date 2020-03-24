@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 const ModalImage = ({ modalImage }) => (
-  <img src={modalImage.urls.raw} alt="" />
+  <img src={modalImage && modalImage.urls.raw} alt="" />
 );
 
 const mapStateToProps = state => ({

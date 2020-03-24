@@ -4,10 +4,10 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Masonry from "masonry-layout";
 import imagesLoaded from "imagesloaded";
 
-import { fetchImages } from "../actions/fetchImages";
+import { getImagesOnScroll } from "../actions/getImagesOnScroll";
 import ImageCard from "./ImageCard";
 
-const ImageCardContainer = ({ images, fetchImages }) => {
+const ImageCardContainer = ({ images, getImagesOnScroll }) => {
   useEffect(() => {
     const imageCardContainer = document.querySelector(".imageCardContainer");
     imagesLoaded(imageCardContainer, () =>
@@ -29,7 +29,7 @@ const ImageCardContainer = ({ images, fetchImages }) => {
     <main className="imageCardContainer">
       <InfiniteScroll
         dataLength={images.length}
-        next={fetchImages}
+        next={getImagesOnScroll}
         scrollThreshold={0.8}
         hasMore={true}
         loader={<div />}
@@ -46,4 +46,4 @@ const mapStateToProps = state => ({
   modalImage: state.modalImage
 });
 
-export default connect(mapStateToProps, { fetchImages })(ImageCardContainer);
+export default connect(mapStateToProps, { getImagesOnScroll })(ImageCardContainer);

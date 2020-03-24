@@ -3,14 +3,17 @@ import { connect } from "react-redux";
 
 import FormTitle from "./FormTitle";
 import FormInput from "./FormInput";
-import { fetchImages } from "../actions/fetchImages";
+import { getImagesOnSearch } from "../actions/getImagesOnSearch";
 
-const SearchForm = ({ fetchImages }) => (
+
+const SearchForm = ({ getImagesOnSearch, query }) => (
   <header>
     <form
       onSubmit={e => {
         e.preventDefault();
-        fetchImages();
+        if (query) {
+          getImagesOnSearch();
+        }
       }}
       className="searchForm"
     >
@@ -20,4 +23,8 @@ const SearchForm = ({ fetchImages }) => (
   </header>
 );
 
-export default connect(null, { fetchImages })(SearchForm);
+const mapStateToProps = state => ({
+  query: state.query
+})
+
+export default connect(mapStateToProps, { getImagesOnSearch })(SearchForm);
