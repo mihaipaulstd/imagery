@@ -7,14 +7,12 @@ const ImageCard = ({ image, opacityDelay, openModal }) => {
   const [isOpaque, setIsOpaque] = useState(false);
 
   useEffect(() => {
-    setOpaque();
-  }, []);
-
-  const setOpaque = () => {
     setTimeout(() => {
       setIsOpaque(true);
     }, opacityDelay);
-  };
+  }, [opacityDelay]);
+
+  
 
   return (
     <div
