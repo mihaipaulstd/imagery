@@ -153,8 +153,8 @@ header {
   transform: translate(-50%, -50%);
 
   img {
-    max-width: 90vw;
-    max-height: 90vh;
+    width: 90vmin;
+    height: 90vmin;
     object-fit: contain;
     user-select: none;
   }
