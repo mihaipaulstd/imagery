@@ -4,6 +4,7 @@ import ReactModal from "react-modal";
 
 import { closeModal } from "../actions/closeModal";
 import ModalImage from "./ModalImage";
+import ModalNavigation from "./ModalNavigation";
 
 ReactModal.setAppElement("#root");
 
@@ -15,6 +16,10 @@ const Modal = ({ closeModal, isModalOpen, image }) => (
     overlayClassName="Overlay"
   >
     <ModalImage />
+    
+
+
+    <ModalNavigation />
   </ReactModal>
 );
 

@@ -7,14 +7,10 @@ const ImageCard = ({ image, opacityDelay, openModal }) => {
   const [isOpaque, setIsOpaque] = useState(false);
 
   useEffect(() => {
-    setOpaque();
-  }, []);
-
-  const setOpaque = () => {
     setTimeout(() => {
       setIsOpaque(true);
     }, opacityDelay);
-  };
+  }, [opacityDelay]);
 
   return (
     <div
@@ -23,7 +19,7 @@ const ImageCard = ({ image, opacityDelay, openModal }) => {
         openModal(image);
       }}
     >
-      <img src={image.urls.regular} alt="" />
+      <img src={image && image.urls.regular} alt="" />
     </div>
   );
 };

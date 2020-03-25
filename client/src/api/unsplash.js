@@ -1,5 +1,5 @@
 import axios from "axios/index";
-import { ACCESS_KEY, SECRET_KEY } from "./keys/unsplash";
+import { ACCESS_KEY } from "./keys/unsplash";
 
 const instance = axios.create({
   baseURL: "https://api.unsplash.com/",

@@ -11,6 +11,7 @@ const SearchForm = ({ getImagesOnSearch, query }) => (
     <form
       onSubmit={e => {
         e.preventDefault();
+        e.target.querySelector("input").blur();
         if (query) {
           getImagesOnSearch();
         }

@@ -13,7 +13,11 @@ const FormInput = ({ query, setQuery }) => (
       value={query}
       onChange={e => setQuery(e.target.value)}
     />
-    <button type="submit" className="searchIcon">
+    <button
+      type="submit"
+      className="searchIcon"
+      onClick={e => e.target.parentElement.blur()}
+    >
       <i className="fas fa-search" />
     </button>
   </div>
