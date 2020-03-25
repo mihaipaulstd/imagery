@@ -153,8 +153,8 @@ header {
   transform: translate(-50%, -50%);
 
   img {
-    width: 90vmin;
-    height: 90vmin;
+    max-width: 90vw;
+    max-height: 90vh;
     object-fit: contain;
     user-select: none;
   }
@@ -170,3 +170,8 @@ header {
   z-index: 2;
   backdrop-filter: blur(3px);
 }
+
+
+
+
+
